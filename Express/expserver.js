@@ -2,6 +2,8 @@
 const express = require("express");
 
 const app = express();
+const first = require(`./first`)
+console.log(first())
 
 
 app.get("/", function(req, res){
@@ -19,8 +21,6 @@ app.get("/contact", function(req, res){
 app.get("/data", function(req, res){
     res.sendFile(__dirname+"/MOCK_DATA.json")
 });
-
-
 
 
 app.listen(5000, function(req, res){

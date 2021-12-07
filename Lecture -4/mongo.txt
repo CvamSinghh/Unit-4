@@ -1,0 +1,101 @@
+
+
+step -1 :  mongo-version   // check mongo version
+step -2 :  mongo           // run mongo
+step -3 :  show dbs        // check databases already present or not.
+step -4 :  use assignments // shift or create assignments database.
+step -5 :  db.createCollection("user")  // creating collection as the named user.
+step -6 :  db.user.insertOne({
+  "first_name": "Willa",
+  "last_name": "Yellowlee",
+  "email": "wyellowlee0@cdbaby.com",
+  "gender": "Genderfluid",
+  "ip_address": "188.63.211.43",
+  "age": 35
+})                // insert a single user data.
+
+step -7 : db.user.insertMany ([ {
+  "first_name": "Barnebas",
+  "last_name": "Grunnill",
+  "email": "bgrunnill1@reddit.com",
+  "gender": "Bigender",
+  "ip_address": "96.142.221.40",
+  "age": 34
+}, {
+  "first_name": "Catharine",
+  "last_name": "Taree",
+  "email": "ctaree2@upenn.edu",
+  "gender": "Non-binary",
+  "ip_address": "245.224.194.251",
+  "age": 28
+}, {
+  "first_name": "Letta",
+  "last_name": "Driver",
+  "email": "ldriver3@blogtalkradio.com",
+  "gender": "Genderfluid",
+  "ip_address": "20.148.16.19",
+  "age": 31
+}, {
+  "first_name": "Floria",
+  "last_name": "Jacks",
+  "email": "fjacks4@e-recht24.de",
+  "gender": "Bigender",
+  "ip_address": "21.120.100.67",
+  "age": 20
+}, {
+  "first_name": "Claudius",
+  "last_name": "Lidierth",
+  "email": "clidierth5@etsy.com",
+  "gender": "Polygender",
+  "ip_address": "229.146.29.130",
+  "age": 20
+}, {
+  "first_name": "Sean",
+  "last_name": "Riding",
+  "email": "sriding6@state.gov",
+  "gender": "Genderfluid",
+  "ip_address": "167.243.113.138",
+  "age": 28
+}, {
+  "first_name": "Sara",
+  "last_name": "Freschini",
+  "email": "sfreschini7@blogs.com",
+  "gender": "Genderqueer",
+  "ip_address": "97.235.129.144",
+  "age": 35
+}, {
+  "first_name": "Sheryl",
+  "last_name": "Karchewski",
+  "email": "skarchewski8@go.com",
+  "gender": "Bigender",
+  "ip_address": "106.37.83.228",
+  "age": 22
+}, {
+  "first_name": "Alia",
+  "last_name": "Fern",
+  "email": "afern9@cdbaby.com",
+  "gender": "Agender",
+  "ip_address": "227.97.200.30",
+  "age": 21
+}, {
+  "first_name": "Edwin",
+  "last_name": "Gainsboro",
+  "email": "egainsboroa@usgs.gov",
+  "gender": "Polygender",
+  "ip_address": "54.146.163.109",
+  "age": 23
+}])     
+         //  inserting details of 10 user as per requirement.
+
+step - 8 :  db.user.findOne()    // it will return first user data.
+
+step - 9 :  db.user.updateOne({"gender":"Genderfluid"},{$set: {"gender": "Male"}})  //  it will update the field of that particular user.
+
+step -10 : db.user.updateMany({"gender":"Polygender"},{$set:{"gender":"female"}})    // it will update the gender field  of the matching user.
+
+step - 11 : db.user.remove({"age":23"})     //   it will delete the first user having age equal to 23 years.
+
+step - 12 :  db.user.deleteMany({"gender":"Bigender"})   // it will delete the users having gender as bigender.
+
+step - 13 : db.dropDatabase()   //   it will delete the database from the mongoDB.
+
