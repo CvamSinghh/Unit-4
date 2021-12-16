@@ -1,8 +1,6 @@
 
 Logical Operator commands in MongoDB
 
-
-
 1.  all movies which are equal to movie_name
 
     db.Movie_data.findOne({"movie_name":"30 Beats"},{movie_name:1,production_year:1,_id:0})
